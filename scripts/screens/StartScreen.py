@@ -108,6 +108,8 @@ class StartScreen(Screens):
                 UpdateAvailablePopup(game.switches["last_screen"])
             elif event.ui_element == self.quit:
                 quit(savesettings=False, clearevents=False)
+            elif event.ui_element == self.fart_button:
+                self.change_screen("fart screen")
             elif event.ui_element == self.social_buttons["discord_button"]:
                 if platform.system() == "Darwin":
                     subprocess.Popen(
@@ -166,6 +168,7 @@ class StartScreen(Screens):
         self.warning_label.kill()
         self.update_button.kill()
         self.quit.kill()
+        self.fart_button.kill()
         self.closebtn.kill()
         self.warning_label_background.kill()
         for btn in self.social_buttons:
@@ -240,6 +243,14 @@ class StartScreen(Screens):
             object_id="@buttonstyles_mainmenu",
             manager=MANAGER,
             anchors={"top_target": self.settings_button},
+        )
+        self.fart_button = UISurfaceImageButton(
+            ui_scale(pygame.Rect((70, 15), (200, 30))),
+            "fart",
+            image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30)),
+            object_id="@buttonstyles_mainmenu",
+            manager=MANAGER,
+            anchors={"top_target": self.quit},
         )
 
         self.social_buttons["twitter_button"] = UIImageButton(

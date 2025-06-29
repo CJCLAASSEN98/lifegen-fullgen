@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "lifegen-filesystem": {
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-filesystem", "/home/jeff/dev/lifegen-fullgen"],
+      "description": "File system access for LifeGen project"
+    },
+    "lifegen-git": {
+      "command": "npx", 
+      "args": ["@modelcontextprotocol/server-git", "--repository", "/home/jeff/dev/lifegen-fullgen"],
+      "description": "Git operations for LifeGen repository"
+    },
+    "python-tools": {
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-everything"],
+      "description": "General development tools"
+    }
+  }
+}
