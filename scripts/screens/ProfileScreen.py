@@ -316,6 +316,9 @@ class ProfileScreen(Screens):
             elif event.ui_element == self.inspect_button:
                 self.close_current_tab()
                 self.change_screen("sprite inspect screen")
+            elif event.ui_element == self.edit_sprite_button:
+                self.close_current_tab()
+                self.change_screen("sprite edit screen")
             elif self.the_cat.ID == game.clan.your_cat.ID and event.ui_element == self.profile_elements["change_cat"]:
                 self.close_current_tab()
                 self.change_screen("choose reborn screen")
@@ -975,6 +978,13 @@ class ProfileScreen(Screens):
             get_button_dict(ButtonStyles.ICON, (34, 34)),
             object_id="@buttonstyles_icon",
         )
+        self.edit_sprite_button = UISurfaceImageButton(
+            ui_scale(pygame.Rect((703, 60), (34, 34))),
+            Icon.NOTEPAD,
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
+            manager=MANAGER,
+        )
         
         self.exile_return_button = UIImageButton(ui_scale(pygame.Rect((383, 119), (34, 34))), "",
                                                 object_id="#exile_return_button",  tool_tip_text='Ask your Clan for your nest back.', manager=MANAGER)
@@ -1088,6 +1098,7 @@ class ProfileScreen(Screens):
         self.placeholder_tab_3.kill()
         self.accessories_tab_button.kill()
         self.inspect_button.kill()
+        self.edit_sprite_button.kill()
         self.close_current_tab()
 
     def build_profile(self):

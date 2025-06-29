@@ -30,6 +30,7 @@ from .RoleScreen import RoleScreen
 from .Screens import Screens
 from .SettingsScreen import SettingsScreen
 from .SpriteInspectScreen import SpriteInspectScreen
+from .SpriteEditScreen import SpriteEditScreen
 from .StartScreen import StartScreen
 from .SwitchClanScreen import SwitchClanScreen
 from .WarriorDenScreen import WarriorDenScreen
@@ -63,6 +64,7 @@ class AllScreens:
     ceremony_screen = CeremonyScreen("ceremony screen")
     role_screen = RoleScreen("role screen")
     sprite_inspect_screen = SpriteInspectScreen("sprite inspect screen")
+    sprite_edit_screen = SpriteEditScreen("sprite edit screen")
 
     make_clan_screen = MakeClanScreen("make clan screen")
 
@@ -115,6 +117,7 @@ class AllScreens:
         cls.ceremony_screen = CeremonyScreen("ceremony screen")
         cls.role_screen = RoleScreen("role screen")
         cls.sprite_inspect_screen = SpriteInspectScreen("sprite inspect screen")
+        cls.sprite_edit_screen = SpriteEditScreen("sprite edit screen")
 
         cls.make_clan_screen = MakeClanScreen("make clan screen")
 
